@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
 
 function App() {
+  const [resource, setResource] = useState("posts");
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <div className="container">
+        <button type="submit" className="btn btn-primary" onClick={()=>setResource("posts")}>Post</button>
+        <button type="submit" className="btn btn-primary" onClick={()=>setResource("users")}>User</button>
+        <div>
+        {resource}
+        </div>
+     </div>  
   );
 }
 
